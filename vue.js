@@ -145,16 +145,19 @@
 
   /**
    * Check if a tag is a built-in tag.
+   * 检查标记是否为内置标记
    */
   var isBuiltInTag = makeMap('slot,component', true);
 
   /**
    * Check if an attribute is a reserved attribute.
+   * 检查属性是否为保留属性
    */
   var isReservedAttribute = makeMap('key,ref,slot,slot-scope,is');
 
   /**
    * Remove an item from an array.
+   * 从数组中移除项
    */
   function remove (arr, item) {
     if (arr.length) {
@@ -167,6 +170,7 @@
 
   /**
    * Check whether an object has the property.
+   * 检查对象是否具有属性
    */
   var hasOwnProperty = Object.prototype.hasOwnProperty;
   function hasOwn (obj, key) {
@@ -175,6 +179,7 @@
 
   /**
    * Create a cached version of a pure function.
+   * 创建纯函数的缓存版本
    */
   function cached (fn) {
     var cache = Object.create(null);
@@ -186,6 +191,7 @@
 
   /**
    * Camelize a hyphen-delimited string.
+   * 将连字符分隔的字符串转成驼峰
    */
   var camelizeRE = /-(\w)/g;
   var camelize = cached(function (str) {
@@ -194,6 +200,7 @@
 
   /**
    * Capitalize a string.
+   * 字符串大写
    */
   var capitalize = cached(function (str) {
     return str.charAt(0).toUpperCase() + str.slice(1)
@@ -201,6 +208,7 @@
 
   /**
    * Hyphenate a camelCase string.
+   * 驼峰转 xx-xx
    */
   var hyphenateRE = /\B([A-Z])/g;
   var hyphenate = cached(function (str) {
@@ -213,6 +221,11 @@
    * since native bind is now performant enough in most browsers.
    * But removing it would mean breaking code that was able to run in
    * PhantomJS 1.x, so this must be kept for backward compatibility.
+   *对于不支持它的环境，使用简单的绑定polyfill，
+   *例如，Phantomjs 1.x。从技术上讲，我们不再需要这个了。
+   *因为在大多数浏览器中，本机绑定的性能已经足够了。
+   *但是删除它意味着破坏能够运行的代码
+   *phantomjs 1.x，所以为了向后兼容，必须保留它
    */
 
   /* istanbul ignore next */
