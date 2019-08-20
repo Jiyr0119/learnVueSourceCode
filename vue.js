@@ -115,6 +115,8 @@
   /**
    * Convert an input value to a number for persistence.
    * If the conversion fails, return original string.
+   * 将输入值转换为数字进行持久化。
+   * 如果转换失败，则返回原始字符串。
    */
   function toNumber (val) {
     var n = parseFloat(val);
@@ -124,6 +126,8 @@
   /**
    * Make a map and return a function for checking if a key
    * is in that map.
+   * 制作一个map并返回一个函数，用于检查是否有一个键
+   * 在map上。
    */
   function makeMap (
     str,
