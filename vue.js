@@ -253,6 +253,7 @@
 
   /**
    * Convert an Array-like object to a real Array.
+   * 将类似数组的对象转换为真数组
    */
   function toArray (list, start) {
     start = start || 0;
@@ -266,6 +267,7 @@
 
   /**
    * Mix properties into target object.
+   * 将属性混合到目标对象中
    */
   function extend (to, _from) {
     for (var key in _from) {
@@ -310,6 +312,7 @@
 
   /**
    * Generate a string containing static keys from compiler modules.
+   * 从编译器模块生成包含静态键的字符串
    */
   function genStaticKeys (modules) {
     return modules.reduce(function (keys, m) {
@@ -320,6 +323,7 @@
   /**
    * Check if two values are loosely equal - that is,
    * if they are plain objects, do they have the same shape?
+   * 检查两个值是否松散相等
    */
   function looseEqual (a, b) {
     if (a === b) { return true }
