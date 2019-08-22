@@ -364,6 +364,9 @@
    * Return the first index at which a loosely equal value can be
    * found in the array (if value is a plain object, the array must
    * contain an object of the same shape), or -1 if it is not present.
+   * 返回第一个索引，其中松散相等的值可以是
+   * 在数组中找到（如果值是普通对象，则数组必须
+   * 包含相同形状的对象），如果不存在则为-1。
    */
   function looseIndexOf (arr, val) {
     for (var i = 0; i < arr.length; i++) {
@@ -415,47 +418,56 @@
   var config = ({
     /**
      * Option merge strategies (used in core/util/options)
+     * 选项合并策略
      */
     // $flow-disable-line
     optionMergeStrategies: Object.create(null),
 
     /**
      * Whether to suppress warnings.
+     * 是否禁止报错
      */
     silent: false,
 
     /**
      * Show production mode tip message on boot?
+     * 启动时显示生产模式提示消息
      */
     productionTip: "development" !== 'production',
 
     /**
      * Whether to enable devtools
+     * 是否启用devtools
      */
     devtools: "development" !== 'production',
 
     /**
      * Whether to record perf
+     * 是否记录性能
      */
     performance: false,
 
     /**
      * Error handler for watcher errors
+     * 观察程序错误的错误处理程序
      */
     errorHandler: null,
 
     /**
      * Warn handler for watcher warns
+     * 观察者警告的警告行为
      */
     warnHandler: null,
 
     /**
      * Ignore certain custom elements
+     * 忽略某些自定义元素
      */
     ignoredElements: [],
 
     /**
      * Custom user key aliases for v-on
+     * v-on的自定义用户密钥别名
      */
     // $flow-disable-line
     keyCodes: Object.create(null),
@@ -463,33 +475,42 @@
     /**
      * Check if a tag is reserved so that it cannot be registered as a
      * component. This is platform-dependent and may be overwritten.
+     * 检查是否保留了标记，以便它不能注册为
+     *组件。这取决于平台，可能会被覆盖
      */
     isReservedTag: no,
 
     /**
      * Check if an attribute is reserved so that it cannot be used as a component
      * prop. This is platform-dependent and may be overwritten.
+     * 检查属性是否被保留，以便不能用作组件
+     * 参数。这取决于平台，可能会被覆盖。
      */
     isReservedAttr: no,
 
     /**
      * Check if a tag is an unknown element.
+     * 检查标签是否是未知元素
      * Platform-dependent.
+     * 依赖平台
      */
     isUnknownElement: no,
 
     /**
      * Get the namespace of an element
+     * 获取元素的命名空间
      */
     getTagNamespace: noop,
 
     /**
      * Parse the real tag name for the specific platform.
+     * 分析特定平台的真正标记名
      */
     parsePlatformTagName: identity,
 
     /**
      * Check if an attribute must be bound using property, e.g. value
+     * 检查是否必须使用属性（例如值）绑定属性
      * Platform-dependent.
      */
     mustUseProp: no,
@@ -497,6 +518,8 @@
     /**
      * Perform updates asynchronously. Intended to be used by Vue Test Utils
      * This will significantly reduce performance if set to false.
+     * 异步执行更新。用于Vue测试实用程序
+     * 如果设置为false，这将显著降低性能。
      */
     async: true,
 
@@ -517,6 +540,7 @@
 
   /**
    * Check if a string starts with $ or _
+   * 检查字符串是否以$或开头_
    */
   function isReserved (str) {
     var c = (str + '').charCodeAt(0);
