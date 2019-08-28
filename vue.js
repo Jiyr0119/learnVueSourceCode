@@ -549,6 +549,7 @@
 
   /**
    * Define a property.
+   * 定义属性
    */
   function def (obj, key, val, enumerable) {
     Object.defineProperty(obj, key, {
@@ -561,6 +562,7 @@
 
   /**
    * Parse simple path.
+   * 解析简单路径。
    */
   var bailRE = new RegExp(("[^" + (unicodeRegExp.source) + ".$_\\d]"));
   function parsePath (path) {
@@ -583,6 +585,7 @@
   var hasProto = '__proto__' in {};
 
   // Browser environment sniffing
+  // 浏览器环境检测
   var inBrowser = typeof window !== 'undefined';
   var inWeex = typeof WXEnvironment !== 'undefined' && !!WXEnvironment.platform;
   var weexPlatform = inWeex && WXEnvironment.platform.toLowerCase();
@@ -614,6 +617,7 @@
   }
 
   // this needs to be lazy-evaled because vue may be required before
+  // 这需要懒加载，因为之前可能需要Vue
   // vue-server-renderer can set VUE_ENV
   var _isServer;
   var isServerRendering = function () {
@@ -649,6 +653,7 @@
     _Set = Set;
   } else {
     // a non-standard Set polyfill that only works with primitive keys.
+    // 仅与基本键一起使用的非标准集合polyfill。
     _Set = /*@__PURE__*/(function () {
       function Set () {
         this.set = Object.create(null);
@@ -768,6 +773,8 @@
   /**
    * A dep is an observable that can have multiple
    * directives subscribing to it.
+   * DEP是一个可观测的，可以有多个
+   * 订阅它的指令。
    */
   var Dep = function Dep () {
     this.id = uid++;
@@ -795,6 +802,9 @@
       // subs aren't sorted in scheduler if not running async
       // we need to sort them now to make sure they fire in correct
       // order
+      // 如果不运行async，则不会在计划程序中对sub进行排序
+      // 我们现在需要对它们进行排序，以确保它们正确触发
+      // 命令
       subs.sort(function (a, b) { return a.id - b.id; });
     }
     for (var i = 0, l = subs.length; i < l; i++) {
@@ -805,6 +815,9 @@
   // The current target watcher being evaluated.
   // This is globally unique because only one watcher
   // can be evaluated at a time.
+  // 正在评估的当前目标观察程序。
+  // 这是全局唯一的，因为只有一个观察程序
+  // 可以一次计算。
   Dep.target = null;
   var targetStack = [];
 
