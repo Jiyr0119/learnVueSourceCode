@@ -1438,10 +1438,11 @@
 
   /**
    * Assets
-   *
+   * 
    * When a vm is present (instance creation), we need to do
    * a three-way merge between constructor options, instance
    * options and parent options.
+   * 当虚拟机存在（实例创建）时，我们需要在构造函数选项、实例选项和父选项之间进行三方合并。
    */
   function mergeAssets(parentVal, childVal, vm, key) {
     var res = Object.create(parentVal || null);
@@ -1462,6 +1463,7 @@
    *
    * Watchers hashes should not overwrite one
    * another, so we merge them as arrays.
+   * 观察者散列不应该互相覆盖，所以我们将它们合并为数组。
    */
   strats.watch = function(parentVal, childVal, vm, key) {
     // work around Firefox's Object.prototype.watch...
@@ -1563,6 +1565,7 @@
   /**
    * Ensure all props option syntax are normalized into the
    * Object-based format.
+   * 确保所有props选项语法都规范化为基于对象的格式。
    */
   function normalizeProps(options, vm) {
     var props = options.props;
@@ -1602,6 +1605,7 @@
 
   /**
    * Normalize all injections into Object-based format
+   * 将所有注入规范化为基于对象的格式
    */
   function normalizeInject(options, vm) {
     var inject = options.inject;
